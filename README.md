@@ -10,6 +10,8 @@ https://hackernoon.com/currying-in-js-d9ddc64f162e
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976
+
 ## Highlights from articles above
 
 ### What is Functional Programming?
