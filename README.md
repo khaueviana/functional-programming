@@ -25,6 +25,17 @@ Short definition:
 * Avoid mutating state
 * Avoid side effects
 
+    const addToCart = (cart, item, quantity) => {
+    const newCart = lodash.cloneDeep(cart);
+
+    newCart.items.push({
+        item,
+        quantity
+    });
+    return newCart;
+
+    };
+
 ### Pure Function
 A pure function is a function which:
 * Given the same inputs, always returns the same output, and
