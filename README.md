@@ -6,6 +6,10 @@ https://www.youtube.com/watch?v=LVvoSRrkk_g&list=PL77JVjKTJT2hExCayDzVexHmMqb88G
 
 https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
 
+https://hackernoon.com/currying-in-js-d9ddc64f162e
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
 ## Highlights from articles above
 
 ### What is Functional Programming?
@@ -48,6 +52,19 @@ A higher order function is any function which takes a function as an argument, r
 
 In Functional Programming, a function is a first-class citizen of the language. In other words, a function is just another value.
 
+    const greaterThan = (n) => (m) => m > n;
+    undefined
+    const items = [1,2,3,4,5,6,7,8]
+    undefined
+    const validItems = items.filter(greaterThan);
+    undefined
+    validItems
+    (8) [1, 2, 3, 4, 5, 6, 7, 8]
+    const validItemsV2 = items.filter(greaterThan(4));
+    undefined
+    validItemsV2
+    (4) [5, 6, 7, 8]
+
 ### Declarative vs Imperative
 **Imperative** programs spend lines of code describing the specific steps used to achieve the desired results — the flow control: How to do things.
 
@@ -59,3 +76,38 @@ In Functional Programming, a function is a first-class citizen of the language. 
 
 ### Referential Transparency
 Referential Transparency is a fancy term to describe that a pure function can safely be replaced by its expression. An example will help illustrate this.
+
+### Currying
+Currying is the process of breaking down a function into a series of functions that each take a single argument.
+
+
+    const sum = (x) => (y) => x + y;  
+
+    undefined
+
+    const sumWith5 = sum(5)
+
+    undefined
+
+    sumWith5(1)
+
+    6
+
+    sum(5)(1)
+
+    6
+
+### Clojure
+A closure is the combination of a function and the lexical environment within which that function was declared.
+
+    function makeAdder(x) {
+    return function(y) {
+        return x + y;
+    };
+    }
+
+    var add5 = makeAdder(5);
+    var add10 = makeAdder(10);
+
+    print(add5(2));  // 7
+    print(add10(2)); // 12
